@@ -1,0 +1,289 @@
+/* ═══════════════════════════════════════════════════════════════
+   ANLC TEMPLATE 2 — "MODERN"
+   Clean, minimal, confident. Sans-serif + stark white/charcoal.
+   Ideal for: tech-savvy agents, urban markets, younger professionals.
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+  --c-bg:       #f5f5f3;
+  --c-surface:  #ffffff;
+  --c-black:    #111111;
+  --c-accent:   #0057ff;
+  --c-accent2:  #e8f0ff;
+  --c-text:     #222222;
+  --c-muted:    #888888;
+  --c-border:   #e0e0e0;
+
+  --f-display: 'DM Serif Display', Georgia, serif;
+  --f-body:    'DM Sans', system-ui, sans-serif;
+
+  --r-card:  12px;
+  --r-pill:  100px;
+  --shadow:  0 1px 12px rgba(0,0,0,.06);
+  --max-w:   1080px;
+  --trans:   0.2s ease;
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+#site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--c-border);
+}
+#main-nav {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-brand {
+  font-family: var(--f-body);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--c-black);
+  letter-spacing: -.01em;
+}
+.nav-list { list-style: none; display: flex; gap: 2rem; }
+.nav-list a {
+  color: var(--c-muted);
+  font-size: .88rem;
+  font-weight: 400;
+  transition: color var(--trans);
+}
+.nav-list a:hover { color: var(--c-black); }
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.section-hero {
+  background: var(--c-surface);
+  padding: 8rem 2rem 7rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--c-accent2);
+  color: var(--c-accent);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: .3rem .9rem;
+  border-radius: var(--r-pill);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.hero-name {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  color: var(--c-black);
+  line-height: 1.0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -.02em;
+}
+.hero-tagline {
+  font-size: 1.15rem;
+  color: var(--c-muted);
+  max-width: 500px;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: .7rem 1.75rem;
+  border-radius: var(--r-pill);
+  font-family: var(--f-body);
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: all var(--trans);
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--c-black);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--c-accent); }
+.btn-secondary {
+  border: 1.5px solid var(--c-border);
+  color: var(--c-text);
+}
+.btn-secondary:hover { border-color: var(--c-black); }
+
+/* ── Section scaffold ────────────────────────────────────────── */
+.section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-heading {
+  font-family: var(--f-display);
+  font-size: 1.8rem;
+  color: var(--c-black);
+  margin-bottom: 2.5rem;
+  letter-spacing: -.01em;
+}
+
+/* ── About ───────────────────────────────────────────────────── */
+.section-about {
+  padding: 6rem 2rem;
+  background: var(--c-bg);
+}
+.section-about .section-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-img {
+  width: 200px; height: 260px;
+  object-fit: cover;
+  border-radius: var(--r-card);
+  filter: grayscale(10%);
+}
+.about-bio { color: var(--c-text); margin-bottom: 1.5rem; font-weight: 300; }
+.about-highlights { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1rem; }
+.about-highlights li {
+  font-size: .9rem;
+  color: var(--c-muted);
+  padding-left: 1.2rem;
+  position: relative;
+}
+.about-highlights li::before {
+  content: '→';
+  position: absolute; left: 0;
+  color: var(--c-accent);
+}
+.license-badge { font-size: .78rem; color: var(--c-muted); margin-top: .5rem; }
+
+/* ── Services ────────────────────────────────────────────────── */
+.section-services {
+  padding: 6rem 2rem;
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+.service-card {
+  background: var(--c-surface);
+  padding: 2rem 1.5rem;
+  transition: background var(--trans);
+}
+.service-card:hover { background: var(--c-bg); }
+.service-icon { font-size: 1.5rem; display: block; margin-bottom: 1rem; }
+.service-title { font-size: 1rem; font-weight: 600; color: var(--c-black); margin-bottom: .4rem; }
+.service-desc { font-size: .87rem; color: var(--c-muted); font-weight: 300; }
+
+/* ── Links ───────────────────────────────────────────────────── */
+.section-links {
+  padding: 6rem 2rem;
+  background: var(--c-black);
+}
+.section-links .section-heading { color: #fff; }
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .75rem;
+}
+.link-card {
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-card);
+  color: rgba(255,255,255,.8);
+  font-size: .9rem;
+  text-align: center;
+  transition: all var(--trans);
+}
+.link-card:hover {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: #fff;
+}
+
+/* ── Testimonials ────────────────────────────────────────────── */
+.section-testimonials {
+  padding: 6rem 2rem;
+  background: var(--c-accent2);
+}
+.section-testimonials .section-heading { color: var(--c-black); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--c-surface);
+  border-radius: var(--r-card);
+  padding: 2rem;
+}
+.testimonial-quote {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--c-text);
+  margin-bottom: 1rem;
+}
+.testimonial-author { font-size: .82rem; color: var(--c-accent); font-weight: 600; }
+
+/* ── Contact ─────────────────────────────────────────────────── */
+.section-contact { padding: 6rem 2rem; background: var(--c-bg); }
+.contact-cards { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+.contact-card {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-card);
+  min-width: 220px;
+  transition: border-color var(--trans);
+}
+.contact-card:hover { border-color: var(--c-accent); }
+.contact-icon { font-size: 1.2rem; }
+.contact-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--c-muted); display: block; }
+.contact-value { font-size: .95rem; font-weight: 600; color: var(--c-black); }
+.contact-value:hover { color: var(--c-accent); }
+.contact-area { font-size: .85rem; color: var(--c-muted); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+#site-footer {
+  background: var(--c-black);
+  color: rgba(255,255,255,.35);
+  text-align: center;
+  padding: 2rem;
+  font-size: .82rem;
+}
+.footer-copy { margin-bottom: .3rem; }
+.footer-credit a { color: var(--c-accent); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .section-about .section-inner { grid-template-columns: 1fr; }
+  .about-img { width: 100%; height: 240px; }
+  .hero-name { font-size: 2.8rem; }
+}
