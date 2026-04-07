@@ -17,6 +17,9 @@
     html { scroll-behavior: smooth; }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
+
+    /* ── Hero darkening override ──────────────────────────────────── */
+    .section-hero { background: #e8e6e1 !important; }
   </style>
 </head>
 <body>
@@ -110,16 +113,16 @@
   photo:       "Sydney-headshot.webp",
 
   highlights: [
-    "📍 Seattle & greater King County specialist",
-    "🏢 Windermere / Summit LLC — South Lake Union",
-    "🤝 Personalized service from search to close",
+    "Seattle & greater King County specialist",
+    "Windermere / Summit LLC — South Lake Union",
+    "Personalized service from search to close",
   ],
 
   services: [
-    { icon: "🏠", title: "Buyer Representation",  desc: "Expert guidance from your first showing through closing day." },
-    { icon: "📈", title: "Seller Marketing",       desc: "Strategic pricing, professional presentation, and targeted outreach." },
-    { icon: "🔎", title: "Market Analysis",         desc: "Data-driven CMAs so you always know what a home is really worth." },
-    { icon: "📋", title: "Relocation Services",    desc: "New to Seattle? Sydney will help you find the right neighborhood fast." },
+    { icon: "", title: "Buyer Representation",  desc: "Expert guidance from your first showing through closing day." },
+    { icon: "", title: "Seller Marketing",       desc: "Strategic pricing, professional presentation, and targeted outreach." },
+    { icon: "", title: "Market Analysis",         desc: "Data-driven CMAs so you always know what a home is really worth." },
+    { icon: "", title: "Relocation Services",    desc: "New to Seattle? Sydney will help you find the right neighborhood fast." },
   ],
 
   phone:     "(360) 402-6079",
@@ -127,10 +130,10 @@
   area:      "Serving Seattle, South Lake Union & surrounding King County areas",
 
   links: [
-    { label: "📞 Call Sydney",       href: "tel:+13604026079",                    type: "phone"    },
-    { label: "✉️ Send Email",         href: "mailto:sydney.reed@windermere.com",   type: "email"    },
-    { label: "🏡 My Listings",        href: "https://sydneyreed.withwre.com",      type: "listings" },
-    { label: "📅 Book a Consult",     href: "https://sydneyreed.withwre.com",      type: "calendar" },
+    { label: "Call Sydney",       href: "tel:+13604026079",                    type: "phone"    },
+    { label: "Send Email",        href: "mailto:sydney.reed@windermere.com",   type: "email"    },
+    { label: "My Listings",       href: "https://sydneyreed.withwre.com",      type: "listings" },
+    { label: "Book a Consult",    href: "https://sydneyreed.withwre.com",      type: "calendar" },
   ],
 
   testimonials: [],
@@ -177,8 +180,7 @@
 
     const cta = document.getElementById("hero-cta");
     cta.innerHTML = `
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
-      <a href="#links"   class="btn btn-secondary">View Links</a>
+      <a href="#links" class="btn btn-primary">Connect</a>
     `;
 
     /* ── 5. About ────────────────────────────── */
@@ -252,14 +254,13 @@
     /* ── 9. Contact ──────────────────────────── */
     const contactCards = document.getElementById("contact-cards");
     const contactItems = [
-      { icon: "📞", label: "Phone", value: CLIENT.phone, href: `tel:${CLIENT.phone.replace(/\D/g,"")}` },
-      { icon: "✉️", label: "Email", value: CLIENT.email, href: `mailto:${CLIENT.email}` },
+      { label: "Phone", value: CLIENT.phone, href: `tel:${CLIENT.phone.replace(/\D/g,"")}` },
+      { label: "Email", value: CLIENT.email, href: `mailto:${CLIENT.email}` },
     ];
     contactItems.forEach(c => {
       const div = document.createElement("div");
       div.className = "contact-card";
       div.innerHTML = `
-        <span class="contact-icon">${c.icon}</span>
         <span class="contact-label">${c.label}</span>
         <a class="contact-value" href="${c.href}">${c.value}</a>
       `;
